@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleById } from "../../util/utils";
+import Comments from "./Comments";
 
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
@@ -26,6 +27,9 @@ const SingleArticle = () => {
         <img src={`${article.article_img_url}`} atl={`${article.title}`} />
         <p>{`${article.body}`}</p>
         <p>Votes {`${article.votes}`}</p>
+        <div>
+          <Comments />
+        </div>
       </div>
     </>
   );

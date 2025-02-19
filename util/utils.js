@@ -15,3 +15,11 @@ export const getArticleById = (article_id) => {
     return respond.data.article;
   });
 };
+
+export const fetcAllCommentsByArticleId = (article_id) => {
+  console.log(article_id, ">>>");
+  return ncNewsApi.get(`/articles/${article_id}/comments`).then((respond) => {
+    console.log(respond.data.comments, "respond");
+    return respond.data.comments;
+  });
+};
