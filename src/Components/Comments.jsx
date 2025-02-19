@@ -7,8 +7,8 @@ const Comments = () => {
   const [isLoading, setLoading] = useState(true);
   const { article_id } = useParams();
   useEffect(() => {
-    fetcAllCommentsByArticleId(article_id).then((respond) => {
-      setComments(respond);
+    fetcAllCommentsByArticleId(article_id).then((response) => {
+      setComments(response);
       setLoading(false);
     });
   }, []);

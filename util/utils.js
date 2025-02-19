@@ -11,15 +11,13 @@ export const getAllArticles = () => {
 };
 
 export const getArticleById = (article_id) => {
-  return ncNewsApi.get(`/articles/${article_id}`).then((respond) => {
-    return respond.data.article;
+  return ncNewsApi.get(`/articles/${article_id}`).then((response) => {
+    return response.data.article;
   });
 };
 
 export const fetcAllCommentsByArticleId = (article_id) => {
-  console.log(article_id, ">>>");
-  return ncNewsApi.get(`/articles/${article_id}/comments`).then((respond) => {
-    console.log(respond.data.comments, "respond");
-    return respond.data.comments;
+  return ncNewsApi.get(`/articles/${article_id}/comments`).then((response) => {
+    return response.data.comments;
   });
 };
