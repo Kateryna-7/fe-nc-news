@@ -9,7 +9,6 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      <h1>Hello</h1>
       <Routes>
         <Route path="/" element={<ArticlesList />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />

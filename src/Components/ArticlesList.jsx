@@ -6,8 +6,8 @@ const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    getAllArticles().then((respond) => {
-      setArticles(respond);
+    getAllArticles().then((response) => {
+      setArticles(response);
       setIsLoading(false);
     });
   }, []);
@@ -17,8 +17,6 @@ const ArticlesList = () => {
   }
   return (
     <>
-      <h2>ArticlesList</h2>
-
       <div>
         {articles.map((article) => {
           return (
