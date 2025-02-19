@@ -5,8 +5,13 @@ const ncNewsApi = axios.create({
 });
 
 export const getAllArticles = () => {
-  console.log("in API");
   return ncNewsApi.get("/articles").then((respond) => {
     return respond.data.articles;
+  });
+};
+
+export const getArticleById = (article_id) => {
+  return ncNewsApi.get(`/articles/${article_id}`).then((respond) => {
+    return respond.data.article;
   });
 };
