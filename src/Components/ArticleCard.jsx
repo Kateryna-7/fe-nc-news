@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const ArticleCard = ({ article }) => {
   return (
     <div>
@@ -6,7 +7,7 @@ const ArticleCard = ({ article }) => {
       <p>{`${article.topic}`}</p>
       <p>By {`${article.author}`}</p>
       <p>Votes {`${article.votes}`}</p>
-      <button>Read more</button>
+      <Link to={`/articles/${article.article_id}`}>Read more</Link>
     </div>
   );
 };

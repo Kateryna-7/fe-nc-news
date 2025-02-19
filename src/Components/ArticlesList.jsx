@@ -4,7 +4,7 @@ import { getAllArticles } from "../../util/utils";
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
-  const [isLoading, setIsLoading] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     getAllArticles().then((respond) => {
       setArticles(respond);
