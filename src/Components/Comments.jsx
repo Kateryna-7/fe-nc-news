@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetcAllCommentsByArticleId } from "../../util/utils";
+import AddComment from "./AddComment";
 
 const Comments = () => {
   const [comments, setComments] = useState([]);
@@ -19,15 +20,21 @@ const Comments = () => {
   return (
     <>
       <div>
+        <h3 className="comment-header">Comments...</h3>
+        <div>
+          <AddComment
+            article_id={article_id}
+            setLoading={setLoading}
+            setComments={setComments}
+          />
+        </div>
         {comments.map((comment) => {
           return (
             <>
-              <p>{comment.author}</p>
-
-              {/* {console.log(toLocaleDateString(comment.created_at), "data")} */}
-              <p>{comment.created_at.slice(0, 10)}</p>
-              <p>{comment.body}</p>
-              <p>{comment.votes}</p>
+              <p className="comment-author">{comment.author}</p>
+              <p className="comment-data">{comment.created_at.slice(0, 10)}</p>
+              <p className="comment-body">{comment.body}</p>
+              <p className="comment-votes">{comment.votes}</p>
             </>
           );
         })}

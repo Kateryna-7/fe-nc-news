@@ -1,18 +1,28 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { patchArticleVotes } from "../../util/utils";
 const ArticleCard = ({ article }) => {
   const [votesCount, setVotesCount] = useState(article.votes);
   return (
     <div>
-      <h1>{article.title}</h1>
+      <h1 className="articleCard-title">{article.title}</h1>
       <img src={article.article_img_url} atl={article.title} />
-      <p>{article.topic}</p>
-      <p>By {article.author}</p>
-      <p>Created at {article.created_at.slice(0, 10)}</p>
-      <p>Votes {votesCount}</p>
+      <p className="articleCard-topic">{article.topic}</p>
+      <p className="articleCard-author">By {article.author}</p>
+      <p className="articleCard-data">
+        Created at {article.created_at.slice(0, 10)}
+      </p>
+      <p className="articleCadr-votes">Votes {votesCount}</p>
       <button
         onClick={() => {
-          setVotesCount(votesCount + 1);
+          setVotesCount((currentVotes) => {
+            return currentVotes + 1;
+          });
+          patchArticleVotes(article.article_id).catch(() => {
+            setVotesCount((currentVotes) => {
+              return currentVotes - 1;
+            });
+          });
         }}
       >
         Add vote
