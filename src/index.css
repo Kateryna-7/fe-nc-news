@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: rgb(250, 238, 221);
 }
 
 h1 {
@@ -65,4 +66,61 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.loading {
+  font-weight: 700;
+  color: blueviolet;
+}
+
+.article-title {
+  text-align: center;
+  background-color: rgb(180, 137, 220);
+}
+
+.article-topic {
+  text-align: left;
+  color: blueviolet;
+
+  font-style: italic;
+}
+
+.article-author {
+  text-align: left;
+  font-weight: 600;
+}
+
+.article-img {
+  width: 80%;
+  border-radius: 8px;
+}
+
+.article-body {
+  text-align: left;
+}
+
+.article-votes {
+  text-align: left;
+  font-weight: 600;
+}
+
+.comment-author {
+  text-align: left;
+}
+.comment-data {
+  text-align: left;
+}
+.comment-body {
+  text-align: left;
+}
+
+.comment-votes {
+  text-align: right;
+}
+
+.comment-type {
+  text-align: left;
+}
+.comment-input {
+  text-align: left;
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ArticleCard from "./ArticleCard";
 import { getAllArticles } from "../../util/utils";
+import NavBar from "./NavBar";
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
@@ -13,15 +14,20 @@ const ArticlesList = () => {
   }, []);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
   return (
     <>
       <div>
+        <NavBar />
         {articles.map((article) => {
           return (
             <div>
-              <ArticleCard article={article} />
+              <ArticleCard
+                ClassName="article-card"
+                key={article.article_id}
+                article={article}
+              />
             </div>
           );
         })}
