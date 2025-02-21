@@ -20,17 +20,17 @@ const ArticlesList = () => {
     <>
       <div>
         <NavBar />
-        {articles.map((article) => {
-          return (
-            <div>
+        <ol className="article-card">
+          {articles.map((article) => {
+            return (
               <ArticleCard
-                ClassName="article-card"
+                className="card"
                 key={article.article_id}
                 article={article}
               />
-            </div>
-          );
-        })}
+            );
+          })}
+        </ol>
       </div>
     </>
   );

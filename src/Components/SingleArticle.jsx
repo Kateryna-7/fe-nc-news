@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getArticleById } from "../../util/utils";
 import Comments from "./Comments";
 import AddComment from "./AddComment";
+import DeleteComment from "./DeleteComment";
 
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
