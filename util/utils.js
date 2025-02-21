@@ -37,3 +37,9 @@ export const postNewComment = (newComment, article_id) => {
       return response;
     });
 };
+
+export const deleteComment = (comment_id) => {
+  return ncNewsApi.delete(`/comments/${comment_id}`).then((response) => {
+    return response;
+  });
+};

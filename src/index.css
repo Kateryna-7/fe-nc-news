@@ -68,6 +68,43 @@ button:focus-visible {
   }
 }
 
+.article-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.articleCard-title {
+}
+
+.articleCard-img {
+  width: 80%;
+  border-radius: 8px;
+}
+
+.articleCard-topic {
+  text-align: left;
+  color: blueviolet;
+  font-style: italic;
+}
+
+.articleCard-author {
+  text-align: left;
+  font-weight: 600;
+}
+
+.articleCard-data {
+}
+
+.articleCadr-votes {
+}
+
+.addVotes-button {
+  background-color: rgb(205, 178, 229);
+}
+.addVotes-button:hover {
+  background-color: rgb(187, 141, 229);
+}
+
 .loading {
   font-weight: 700;
   color: blueviolet;
@@ -81,7 +118,6 @@ button:focus-visible {
 .article-topic {
   text-align: left;
   color: blueviolet;
-
   font-style: italic;
 }
 

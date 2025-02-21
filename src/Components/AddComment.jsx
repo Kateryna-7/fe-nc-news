@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { postNewComment } from "../../util/utils";
-const AddComment = ({ article_id, setLoading, setComments }) => {
+const AddComment = ({ article_id, setLoading, setComments, loggedInUser }) => {
   const [commentText, setCommentText] = useState("");
   const handleInputComment = (e) => {
     setCommentText(e.target.value);
@@ -8,7 +8,7 @@ const AddComment = ({ article_id, setLoading, setComments }) => {
 
   const handleCommentBtnClick = (e) => {
     e.preventDefault();
-    const newComment = { username: "jessjelly", body: commentText };
+    const newComment = { username: loggedInUser, body: commentText };
     setLoading(true);
     postNewComment(newComment, article_id).then((response) => {
       setComments((currentComments) => {
